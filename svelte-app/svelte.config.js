@@ -3,7 +3,7 @@ import adapter from '@sveltejs/adapter-static';
 export default {
   kit: {
     adapter: adapter({
-      fallback: 'index.html' // SPA support for GitHub Pages
+      fallback: 'index.html', // needed for GitHub Pages SPA
     })
   }
 };

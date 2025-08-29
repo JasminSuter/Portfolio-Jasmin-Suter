@@ -3,5 +3,5 @@ import { sveltekit } from '@sveltejs/kit/vite';
 
 export default defineConfig({
   plugins: [sveltekit()],
-  base: '/Portfolio-Jasmin-Suter/' // 👈 matches repo name
+  base: '/Portfolio-Jasmin-Suter/', // 👈 must match repo name
 });
