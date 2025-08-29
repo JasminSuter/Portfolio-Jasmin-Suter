@@ -1,5 +1,9 @@
 import adapter from '@sveltejs/adapter-static';
 
-const config = { kit: { adapter: adapter() } };
-
-export default config;
+export default {
+  kit: {
+    adapter: adapter({
+      fallback: 'index.html' // SPA support for GitHub Pages
+    })
+  }
+};
