@@ -1,9 +1,12 @@
+<html lang="en">
 <head>
+      <meta charset="UTF-8">
 	<title>Home</title>
     
 <head>
 
     <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jasmin Suter">
     <title>UI Programming Project 24/25</title>
@@ -16,12 +19,24 @@
 
 <body>
 
+    <section>
 
-<img src="./static/images/HP_Aisle.png" alt="Menu Aisle" class="aisle">
+         <div class="image-container">
+             <img src="./static/images/HP_Aisle.png" alt="Menu Aisle" class="aisle">
+            <a href="art.html" class="click-area link1"></a>
+            <a href="animation.html" class="click-area link2"></a>
+            <a href="projects.html" class="click-area link3"></a>
+        </div>
+
+
+    </section>
+
+
 
 
 
 </body>
+</html>
 
 
 
@@ -55,14 +70,36 @@
     }
 
 
-
+    /*
     .aisle {
+        position: relative;
         width: auto;
         height: 100%;
         max-width: 100%;
+        z-index: 1;
+
     }
 
+    */
 
+    .image-container {
+      position: relative;
+      display: inline-block;
+      height: 100%; 
+    }
+    .image-container img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+    .click-area {
+      position: absolute;
+      display: block;
+    }
+    /* Example hotspots (percentages of image size) */
+    .link1 { left: 18%; top: 20%; width: 58%; height: 18%; background-color: blue; opacity: 50%;}
+    .link2 { left: 12%; top: 40%; width: 70%; height: 18%; background-color: blue; opacity: 50%;}
+    .link3 { left: 15%; top: 60%; width: 67%; height: 18%; background-color: blue; opacity: 50%;}
 
 </style>
 
