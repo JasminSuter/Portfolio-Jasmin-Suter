@@ -8,8 +8,46 @@
 
 <body>
 
-    
-<h1>hello</h1>
+        <img src="./static/images/Animation_Background.png" alt="background plant image" class="background">
+
+    <a href="index.html"><img src="./static/images/ArrowBack.png" alt="arrow back" class="arrowback"></a>
+
+    <!-- Slideshow container -->
+    <div class="slideshow">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <img src="./static/uploads/Arrival_in_Barovia.gif" class="slideshow-image">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="./static/uploads/Walking_Animation.gif" class="slideshow-image">
+    </div>
+
+    <div class="mySlides fade">
+        <img src="./static/uploads/Ball_Animation.gif" class="slideshow-image">
+    </div>
+
+        <div class="mySlides fade">
+        <img src="./static/uploads/Spiral_Animation.gif" class="slideshow-image">
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)"><img src="./static/images/ArrowLeft.png" class="arrow" style="height: 8vh;"></a>
+    <a class="next" onclick="plusSlides(1)"><img src="./static/images/ArrowRight.png" class="arrow" style="height: 8vh;"></a>
+    </div>
+
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    </div> 
+
+
 
 
 </body>
@@ -17,24 +55,161 @@
 
 
 <style>
+
     body {
         background-color: #CF9168 ;
-        background-image: url('./static/images/Animation_Background.png');
+        /* background-image: url('./static/images/Animation_Background.png');*/
         background-size: cover;
         background-repeat: no-repeat;
-        width:  auto;
+        width:  100%;
+        margin: 0;
+    }
+
+    /* background lightbulb image */
+    .background{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: auto;
+        z-index: 0;
+        pointer-events: none; 
+    }
+
+    .arrowback{
+        height: 10vh;
+        z-index: 3;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+    }
+
+    /*slideshow container positioning */
+    .slideshow {
+        width: 80%;
+        height: 60%;
+        margin: auto;
+        margin-top: 100px;
+        padding: 5px;
+        background-color: #e9a87c85;
+        z-index: 2;
+        position: relative;
+    }
+
+    /*images inside slideshow*/
+    .slideshow-image {
+        width: 100%;
         height: 100%;
-        background-position: center bottom;
-
+        object-fit: contain;
+        display: block;
     }
 
 
-    /* For width 1000px and smaller: */
-    @media only screen and (max-width: 1000px) {
-        body {
-            background-image: url('./static/images/Animation_Background_Mobile.png');
-        }
+    * {box-sizing:border-box}
+
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
     }
 
-       
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -50px;
+        padding: 16px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 10;
+        border-radius: 3px 0 0 3px;
+        position: absolute;
+        display: block;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        font-family: 'Handwritten';
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #b67a52;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+        background-color: #7a4b2b;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+
+
 </style>
+
+
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    } 
+</script>
