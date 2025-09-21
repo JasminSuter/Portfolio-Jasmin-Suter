@@ -8,8 +8,99 @@
 
 <body>
 
-    
-<h1>hello</h1>
+    <img src="./static/images/Art_Background_Image.png" alt="background lightbulb image" class="background">
+
+    <a href="index.html"><img src="./static/images/ArrowBack.png" alt="apricat" class="arrowback"></a>
+
+
+
+
+    <!-- Slideshow container -->
+    <div class="slideshow">
+
+    <!-- Full-width images with number and caption text -->
+    <div class="mySlides fade">
+        <img src="./static/uploads/Troubleshooters.png" class="slideshow-image">
+        <div class="text">A group of troubleshooters</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="./static/uploads/Tania.png" class="slideshow-image">
+        <div class="text">A wizard at work</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="./static/uploads/Hugs_final.png" class="slideshow-image">
+        <div class="text">A barbarian making a friend</div>
+    </div>
+
+        <div class="mySlides fade">
+        <img src="./static/uploads/Poster_Final.png" class="slideshow-image">
+        <div class="text">The beginning of an adventure</div>
+    </div>
+
+        <div class="mySlides fade">
+        <img src="./static/uploads/Lycantrophe_Tavern.png" class="slideshow-image">
+        <div class="text">Trouble at the tavern</div>
+    </div>
+
+        <div class="mySlides fade">
+        <img src="./static/uploads/ToA_Party.png" class="slideshow-image">
+        <div class="text">A dnd party at the start of their adventure</div>
+    </div>
+
+        <div class="mySlides fade">
+        <img src="./static/uploads/ToA_Party_Update.png" class="slideshow-image">
+        <div class="text">A dnd party at the end of their adventure</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="./static/uploads/Ship_battle.png" class="slideshow-image">
+        <div class="text">A dnd party in the middle of their adventure</div>
+    </div>
+
+    <div class="mySlides fade">
+        <img src="./static/uploads/Tower_Gang_2.png" class="slideshow-image">
+        <div class="text">Another dnd party</div>
+    </div>
+
+        <div class="mySlides fade">
+        <img src="./static/uploads/Zed_final.png" class="slideshow-image">
+        <div class="text">Bath time</div>
+    </div>
+
+        <div class="mySlides fade">
+        <img src="./static/uploads/The_Quartzsilvers.png" class="slideshow-image">
+        <div class="text">Trouble at home</div>
+    </div>
+
+        <div class="mySlides fade">
+        <img src="./static/uploads/Menace_Gang.png" class="slideshow-image">
+        <div class="text">Another dnd party (but this time at sea!)</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)"><img src="./static/images/ArrowLeft.png" class="arrow" style="height: 10vh;"></a>
+    <a class="next" onclick="plusSlides(1)"><img src="./static/images/ArrowRight.png" class="arrow" style="height: 10vh;"></a>
+    </div>
+
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
+    <span class="dot" onclick="currentSlide(6)"></span>
+    <span class="dot" onclick="currentSlide(7)"></span>
+    <span class="dot" onclick="currentSlide(8)"></span>
+    <span class="dot" onclick="currentSlide(9)"></span>
+    <span class="dot" onclick="currentSlide(10)"></span>
+    <span class="dot" onclick="currentSlide(11)"></span>
+    <span class="dot" onclick="currentSlide(12)"></span>
+    </div> 
 
 
 </body>
@@ -17,18 +108,157 @@
 
 
 <style>
+
     body {
         background-color: #CF9168 ;
-        background-image: url('./static/images/Art_Background.png');
+        /* background-image: url('./static/images/Art_Background.png');*/
         background-size: cover;
         background-repeat: no-repeat;
-        height: 100vh;  /* Image always uses the full height of the window and cuts off length wise */ 
         width:  100%;
-        height: auto;
         margin: 0;
     }
 
+    /* background lightbulb image */
+    .background{
+        width: 100%;
+        height: auto;
+        z-index: 1;
+    }
 
-       
+    .arrowback{
+        height: 10vh;
+        z-index: 3;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+    }
+
+    /*slideshow container positioning */
+    .slideshow {
+        width: 80%;
+        height: 60%;
+        margin: auto;
+        margin-top: -25px;
+        padding: 5px;
+        background-color: #e9a87c85;
+        z-index: 2;
+        position: relative;
+    }
+
+    /*images inside slideshow*/
+    .slideshow-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+
+    * {box-sizing:border-box}
+
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -50px;
+        padding: 16px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 10;
+        border-radius: 3px 0 0 3px;
+        position: absolute;
+        display: block;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        font-family: 'Handwritten';
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #b67a52;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+        background-color: #7a4b2b;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+
+
 </style>
 
+
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    } 
+</script>
