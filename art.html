@@ -35,7 +35,7 @@
     </div>
 
         <div class="mySlides fade">
-        <img src="./static/uploads/Poster_Final.png" class="slideshow-image">
+        <img src="./static/uploads/Poster.png" class="slideshow-image">
         <div class="text">The beginning of an adventure</div>
     </div>
 
@@ -79,6 +79,16 @@
         <div class="text">Another dnd party (but this time at sea!)</div>
     </div>
 
+            <div class="mySlides fade">
+        <img src="./static/uploads/Poster_2.png" class="slideshow-image">
+        <div class="text">A poster design</div>
+    </div>
+
+            <div class="mySlides fade">
+        <img src="./static/uploads/Huxley_Turnaround.png" class="slideshow-image">
+        <div class="text">Character Turnaround</div>
+    </div>
+
     <!-- Next and previous buttons -->
     <a class="prev" onclick="plusSlides(-1)"><img src="./static/images/ArrowLeft.png" class="arrow" style="height: 10vh;"></a>
     <a class="next" onclick="plusSlides(1)"><img src="./static/images/ArrowRight.png" class="arrow" style="height: 10vh;"></a>
@@ -100,6 +110,8 @@
     <span class="dot" onclick="currentSlide(10)"></span>
     <span class="dot" onclick="currentSlide(11)"></span>
     <span class="dot" onclick="currentSlide(12)"></span>
+    <span class="dot" onclick="currentSlide(13)"></span>
+    <span class="dot" onclick="currentSlide(14)"></span>
     </div> 
 
 
@@ -173,6 +185,7 @@
         transition: 0.6s ease;
         border-radius: 0 3px 3px 0;
         user-select: none;
+        height: 10vh;
     }
 
     /* Position the "next button" to the right */
@@ -183,9 +196,27 @@
         display: block;
     }
 
+            /* For width 1500px and smaller: */
+    @media only screen and (max-width: 1500px) {
+        .prev, .next  {
+            transform: scale(0.5);
+        }
+    }
+
+                /* For width 1500px and smaller: */
+    @media only screen and (max-width: 800px) {
+        .prev, .next  {
+            top: 80%;
+        }
+    }
+
+
     /* On hover, add a black background color with a little bit see-through */
-    .prev:hover, .next:hover {
-        transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+        @media only screen and (min-width: 800px) {
+            .prev:hover, .next:hover {
+                transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+            }
     }
 
     /* Caption text */
@@ -223,8 +254,14 @@
     }
 
     @keyframes fade {
-        from {opacity: .4}
-        to {opacity: 1}
+   0% {
+      opacity: 0;
+      transform: translateX(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
     }
 
 
