@@ -1,28 +1,22 @@
 <html lang="en">
 <head>
-      <meta charset="UTF-8">
-	<title>Home</title>
-    
-<head>
-
     <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jasmin Suter">
     <title>Portfolio Website</title>
     <link href="assets/css/screen.css" rel="stylesheet" text="text/css">
     
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-
-
-
+</head>
 
 <body>
 
+    
     <section>
 
-         <div class="image-container">
-            <img src="./static/images/HP_Aisle.png" alt="Menu Aisle" class="aisle">
+         <div class="image_container">
+            <img src="./static/images/HP_Aisle.png" alt="Menu Aisle">
             <a href="art.html" class="click-area link_art"></a>
             <a href="animation.html" class="click-area link_animation"></a>
             <a href="projects.html" class="click-area link_projects"></a>
@@ -30,10 +24,11 @@
 
     </section>
 
-    <section>
+    
+        <section>
 
-         <div class="image-container2">
-                        <img src="./static/images/Me.png" alt="Menu Aisle" class="arrow">
+         <div class="image_container2">
+            <img src="./static/images/Me.png" alt="About me page self portrait">
             <a href="about.html" class="click-area link_about"></a>
         </div>
 
@@ -47,38 +42,21 @@
 <style>
     body {
         background-color: #CF9168 ;
-        background-image: url('./static/images/HP_Background_Flip.png');
+        background-image: url('./static/images/HP_Background.png');
         background-size: cover;
         background-repeat: no-repeat;
         height: 100vh;  /* Image always uses the full height of the window and cuts off length wise */ 
-        width:  100%;
-        height: 100%;
         margin: 0;
+        overflow: hidden;
     }
 
-
-        /* For width 1500px and smaller: */
-    @media only screen and (max-width: 1500px) {
-        body {
-            background-image: url('./static/images/HP_Background_Mobile1.png');
-        }
-    }
-
-
-    /* For width 1000px and smaller: */
-    @media only screen and (max-width: 1000px) {
-        body {
-            background-image: url('./static/images/HP_Background_Mobile2.png');
-        }
-    }
-
-    .image-container {
+    .image_container {
       position: relative;
       display: inline-block;
       height: 100%; 
       z-index: 1;
     }
-    .image-container img {
+    .image_container img {
       height: 100%;
       width: auto;
       display: block;
@@ -93,7 +71,9 @@
     .link_animation { left: 12%; top: 40%; width: 70%; height: 18%;}
     .link_projects { left: 15%; top: 60%; width: 67%; height: 18%;}
 
-    .image-container2 {
+
+    /* Links to about me */
+    .image_container2 {
       position: relative;
       display: inline-block;
       height: 17%; 
@@ -103,34 +83,7 @@
       opacity: 0%;
     }
 
-            /* For width 1500px and smaller: */
-    @media only screen and (max-width: 1500px) {
-        .image-container2 {
-            position: relative;
-            display: inline-block;
-            height: 17%; 
-            z-index: 2;
-            top: -92vh;
-            left: 57vh;
-            opacity: 0%;
-        }
-    }
-
-    
-            /* For width 1000px and smaller: */
-    @media only screen and (max-width: 1000px) {
-        .image-container2 {
-            position: relative;
-            display: inline-block;
-            height: 0%; 
-            top: 0vh;
-            left:0vh;
-            opacity: 0%;
-        }
-    }
-
-
-    .image-container2 img {
+    .image_container2 img {
       height: 100%;
       width: auto;
       display: block;
@@ -138,6 +91,39 @@
 
     /* Hotspots for clickable boxes (percentages of image size) */
     .link_about { left: 0%; top: 0%; width: 100%; height: 100%; background-color: blue; opacity: 0%;}
+
+
+    /* For width 800px and smaller: */
+    @media only screen and (max-width: 800px) {
+        body {
+            background-image: url('./static/images/HP_Background_Mobile.png');
+            margin: 0;
+            top: 0;
+            left: 0;
+        }
+
+        .image_container2 {
+            position: relative;
+            display: inline-block;
+            height: 17%; 
+            z-index: 2;
+            top: -92vh;
+            left: 55vh;
+            opacity: 50%;
+        }
+
+    }
     
+        /* For width 800px and smaller: */
+    @media only screen and (min-width: 2200px) {
+
+        .image_container2 {
+            height: 20%; 
+            top: -92vh;
+            left: 100vh;
+        }
+
+    }
+
 </style>
 
