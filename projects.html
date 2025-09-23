@@ -8,6 +8,7 @@
 
 <body>
 
+<div class="full_box">
     <a href="index.html"><img src="./static/images/ArrowBack.png" alt="arrow back to main page" class="arrowback"></a>
 
     <div class="box">
@@ -232,7 +233,7 @@
     </div>
 
 
-
+</div>
 </body>
 </html>
 
@@ -249,6 +250,19 @@
 
     body {
         background-color: #CF9168 ;
+    }
+
+    .full_box{
+        width: 90%;
+        margin: auto;
+    }
+
+            /* For width 1000px and bigger: */
+    @media only screen and (min-width: 2000px) {
+        .full_box {
+            width: 70%;
+            margin: auto;
+        }
     }
 
     .arrowback{
@@ -281,7 +295,7 @@
 
     .box {
         position: sticky;
-        top: -10px;
+        top: 0px;
         width: 60%;
         left: 80%;
     }
@@ -345,6 +359,18 @@
         grid-template-columns: 1fr 2fr;
         column-gap: 50px;
         margin: 50px;
+    }
+
+    /* For width 800px and smaller: */
+    @media only screen and (max-width: 800px) {
+        .container1 {
+            grid-template-columns: 1fr;
+        }
+       
+        .container2 {
+            grid-template-columns: 1fr;
+        }
+
     }
 
     .art{

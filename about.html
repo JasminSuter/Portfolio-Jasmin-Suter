@@ -21,20 +21,25 @@
         <h1>About me</h1>
           
         <div class="logo">
-          <img src="./static/images/Apricat_noback.png" alt="project witch sketch" class="apricat">
+          <img src="./static/images/Apricat_noback.png" alt="apricat logo" class="apricat">
+          <img src="./static/images/About_Me.png" alt="selfportrait" class="portrait_mobile">
         </div>
 
-        <p>Hello I am Jasmin. I am an artist from Switzerland but I currently live and study in Ireland. I am a freelance artist making
+        <p>Hello, I am Jasmin. I am an artist from Switzerland but I currently live and study in Ireland. I'm a freelance artist creating
           character designs, animations and video games!</p>
         <p>I study "Interactive digital art and design" which is a long title to say that I am learning how to combine art, design and programming!
             I do a lot of drawing, animating, webdesign, UI/UX design, video game design and programming with c++ and html. 
-            It's a great study path for me as I really enjoy both aspects, the technical and the creative and using my skills in both to create. 
+            It's a great study path for me as I really enjoy both aspects, the technical and the creative and using my skills in both to create stuff. 
          </p>
         <p>When I am not working on the computer, I like to bake, play tabletop rolepalying games or craft my own charms and earrings from clay.
             I love cats and the theme of this whole website was inspired by my little mascot, the Apricat!</p>
 
+        <div class="logo">
+          <img src="./static/images/Apricat_noback.png" alt="apricat logo" class="apricat_mobile">
+        </div>
+
         <p>Please contact me for any inquiries at jasminjulia98@gmail.com or on instagram at apricat.jam!</p>
-          
+        
 
         <hr class="line">
       </div>
@@ -73,13 +78,13 @@
   }
 
   
-    .arrowback{
-        height: 10vh;
-        z-index: 3;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-    }
+  .arrowback{
+      height: 10vh;
+      z-index: 3;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+  }
   
   .text{
     font-family: 'Handwritten-Regular';
@@ -114,9 +119,19 @@
     margin-left: 5%;
   }
 
+  .portrait_mobile{
+    height: 0px;
+    opacity: 0%;
+  }
+
   .apricat{
     width: 300px;
     float: right;
+  }
+
+  .apricat_mobile{
+    width: 0px;
+    opacity: 0%;
   }
 
   .line{
@@ -140,5 +155,40 @@
     height: 7rem;
   }
 
+
+  /* For width 800px and smaller: */
+  @media only screen and (max-width: 800px) {
+
+    .container { 
+      grid-template-columns: 1fr;
+    }
+
+    .portrait {
+      margin-top: 0%;
+      margin-left: 0%;
+      height: 0px;
+      opacity: 0%;
+    }
+
+    .portrait_mobile{
+      height: 100%;
+      float: left;
+      opacity: 100%;
+
+    }
+
+    .apricat{
+      width: 0px;
+      opacity: 0%;
+    }
+
+    .apricat_mobile{
+      width: 100px;
+      float: right;
+      opacity: 100%;
+    }
+
+
+  }
 
 </style>
