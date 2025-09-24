@@ -97,10 +97,23 @@
     /* For width 800px and smaller: */
     @media only screen and (max-width: 800px) {
         body {
-            background-image: url('./static/images/HP_Background_Mobile.png');
+            background-image: none;
             margin: 0;
             top: 0;
             left: 0;
+        }
+
+        .image_container {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            object-fit: cover;
+        }
+
+        .image_container img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
         }
 
         .image_container2 {
