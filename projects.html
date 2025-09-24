@@ -297,9 +297,16 @@
 
     .box {
         position: sticky;
-        top: 0px;
+        top: -30px;
         width: 60%;
         left: 80%;
+    }
+
+            /* For width 1000px and bigger: */
+    @media only screen and (max-width: 800px) {
+        .box {
+            width: 90%;
+        }
     }
 
         /* For width 1000px and bigger: */
@@ -310,7 +317,7 @@
     }
 
         /* For width 2000px and bigger: */
-    @media only screen and (min-width: 2200px) {
+    @media only screen and (min-width: 2600px) {
         .box {
             width: 20%;
         }
