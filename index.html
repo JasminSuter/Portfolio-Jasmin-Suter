@@ -96,35 +96,32 @@
 
     /* For width 800px and smaller: */
     @media only screen and (max-width: 800px) {
-        body {
-            background-image: none;
-            margin: 0;
-            top: 0;
-            left: 0;
-        }
+    body {
+        background-image: none;
+        margin: 0;
+        overflow: hidden;
+    }
 
-        .image_container {
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            object-fit: cover;
-        }
+    .image_container {
+        width: 100vw;
+        height: 100vh;
+        display: block;
+    }
+    .image_container img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        display: block;
+    }
 
-        .image_container img {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-        }
-
-        .image_container2 {
-            position: relative;
-            display: inline-block;
-            height: 17%; 
-            z-index: 2;
-            top: -92vh;
-            left: 55vh;
-            opacity: 0%;
-        }
+    .image_container2 {
+        height: 0; 
+        width: 0;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        opacity: 0%;
+    }
 
     }
     
